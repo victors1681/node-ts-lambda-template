@@ -1,0 +1,42 @@
+{
+  "name": "node-ts-lambda-template",
+  "version": "1.0.0",
+  "description": "Node lambda template, typescript with prettier, eslint, jest and pipeline configured",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "ncc run index.js",
+    "build": "ncc build src/index.ts -o dist",
+    "test": "CURRENT_ENV=test jest --config ./jest.config.js ./src  --no-cache"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/victors1681/node-ts-lambda-template.git"
+  },
+  "keywords": [
+    "node",
+    "template",
+    "node",
+    "cicd",
+    "lambda"
+  ],
+  "author": "victor santos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/victors1681/node-ts-lambda-template/issues"
+  },
+  "homepage": "https://github.com/victors1681/node-ts-lambda-template#readme",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.109",
+    "@types/jest": "^29.2.4",
+    "@types/node": "^18.11.17",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
+    "@vercel/ncc": "^0.36.0",
+    "eslint": "^8.30.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "jest": "^29.3.1",
+    "prettier": "^2.8.1",
+    "ts-jest": "^29.0.3"
+  }
+}
