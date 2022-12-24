@@ -1,5 +1,4 @@
-name: Deploy Lambda
-fn-name: node-ts-lambda-template
+name: node-ts-lambda-template
 
 on:
   push:
@@ -36,7 +35,7 @@ jobs:
         run: |
           npm run build
           zip -j deploy.zip ./dist/*
-          aws lambda update-function-code --function-name=dev-${{ fn-name }} --zip-file=fileb://deploy.zip
+          aws lambda update-function-code --function-name=dev-${{ name }} --zip-file=fileb://deploy.zip
 
 
           
