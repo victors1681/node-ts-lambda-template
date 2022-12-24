@@ -1,7 +1,8 @@
 name: Deploy Lambda Stages
 
-parameters: 
-  fnFunction: 'node-ts-lambda-template'
+env: 
+  FN_LAMBDA_NAME: 'node-ts-lambda-template'
+
 on:
   push:
     branches: [ main ]
@@ -37,5 +38,5 @@ jobs:
         run: |
           npm run build
           zip -j deploy.zip ./dist/*
-          aws lambda update-function-code --function-name=dev-${{ parameters.fnFunction }} --zip-file=fileb://deploy.zip
+          aws lambda update-function-code --function-name=dev-$FN_LAMBDA_NAME --zip-file=fileb://deploy.zip
           
